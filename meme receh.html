@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meme Motivasi Absurd</title>
+</head>
+<body>
+  <div class="container">
+    <div class="meme-card">
+      <p id="quote">"Jangan pernah menyerah, kecuali ada diskon besar di toko online"</p>
+      <div id="icon">🍕</div>
+      <h2 id="name">Adha Edies Wulandari</h2>
+      <p id="school">Dari SMAN 3 Bulukumba</p>
+    </div>
+    <button onclick="generateMeme()">Meme Baru!</button>
+  </div>
+
+</body>
+</html>
+<style>
+  body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #ff9966;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+.meme-card {
+  background: linear-gradient(135deg, #a445b2, #ff6a00);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  color: white;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+#meme-card h2, #meme-card p {
+  margin: 10px 0;
+}
+
+#icon {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+button {
+  background-color: #7c3aed;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #5b21b6;
+}
+
+</style>
+
+
+<script>
+ const quotes = [
+  "Kerja keraslah sampai dompetmu butuh password.",
+  "Belajarlah sampai guru les kamu butuh les juga.",
+  "Berjuanglah sampai tanggal tua nggak berani deket-deket."
+];
+
+const icons = ["💡", "📚", "🔥"];
+const names = ["Adha Edies Wulandari"];
+const schools = ["Dari SMAN 3 BULUKUMBA"];
+
+const apikey = 'sha256:c2523072bb5dc8aecdefa48a26a814c3e1f23c5a1a67c236b21af3b870b379cd';
+
+function generateMeme() {
+  const quote = quotes[Math.floor(Math.random() * quotes.length)];
+  const name = names[Math.floor(Math.random() * names.length)];
+  const school = schools[Math.floor(Math.random() * schools.length)];
+  const icon = icons[Math.floor(Math.random() * icons.length)];
+
+  document.getElementById('quote').textContent = `"${quote}"`;
+  document.getElementById('name').textContent = name;
+  document.getElementById('school').textContent = school;
+  document.getElementById('icon').textContent = icon;
+}
+
+</script>
